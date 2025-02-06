@@ -1,22 +1,23 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
 import './index.css';
-import { motion } from "motion/react"
 
 function App() {
 	const [isFlipped, setIsFlipped] = useState(false);
 
-	useEffect(() => {
-	  setTimeout(() => setIsFlipped(true), 100); // Delay for smooth animation
-	}, []);
+  useEffect(() => {
+    // Delay for better transition
+    const timer = setTimeout(() => setIsFlipped(true), 100); 
+    return () => clearTimeout(timer);
+  }, []);
 	
 	return (
 
-		<div className="w-screen h-screen overflow-hidden flex ">
-			<div className={`left w-1/2 ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
-			<div className={`right w-1/2 ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
+		<div className="gradient-container reltative w-screen h-screen overflow-hidden flex flex-row justify-center items-center">
+			<div className={`left-panel w-1/2 md:h-full h-1/3 ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
+			<div className={`right-panel w-1/2 md:h-full h-1/3 ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
     	</div>
 	)
 }
 
-export default App
+export default App;

@@ -6,90 +6,67 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  /* background-color: #7e7d7d; */
-  /* background-color: #1a1a1a; */
-
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.left-panel, .right-panel {
+  /* backface-visibility: hidden;
+  /* transform-style: preserve-3d; */
+  /* will-change: background; */
   
-  --shadow-color: 0deg 0% 0%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-.left, .right {
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  will-change: background;
-}
-
-.left {
+.left-panel {
   background: conic-gradient(#fefafa 30deg, #181818 350deg);
   transform: rotate(90deg);
 }
   
-  
-  
-.right {
+.right-panel {
   background: conic-gradient(#fefafa 30deg, #181818 350deg);
   transform: rotate(90deg) scaleY(-1);
+}
+
+@media only screen and (min-width: 600px) {
+  /* Phones */
+  .left-panel {
+    margin-right: 500px;
+  }
+
+  .right-panel {
+    margin-left: 500px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* Tablets */
+  .left-panel {
+    margin-right: 200px;
+  }
+
+  .right-panel {
+    margin-left: 200px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  /* laptops, desktops */
+  .left-panel {
+    margin-right: 120px;
+  }
+
+  .right-panel {
+    margin-left: 120px;
+  }
+}
+
+@media only screen and (min-width: 1200) {
+  /* Large screens */
+  .left-panel {
+    margin-right: 120px;
+  }
+
+  .right-panel {
+    margin-left: 120px;
+  }
 }
 
 @keyframes flip-gradient {
@@ -115,6 +92,7 @@ button:focus-visible {
   95% { background: conic-gradient(#181818 35deg, #fefafa 315deg); }
   100% { background: conic-gradient(#181818 30deg, #fefafa 350deg); } 
 }
+
 .animate-flip-gradient {
   animation: flip-gradient 1s linear forwards;
 }
