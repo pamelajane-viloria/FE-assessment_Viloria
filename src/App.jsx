@@ -12,8 +12,8 @@ function App() {
 	
 	return (
 		<div className="gradient-container reltative w-screen h-screen overflow-hidden flex flex-row justify-center items-center">
-			<div className={`left-panel w-1/2 md:h-full h-1/3 ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
-			<div className={`right-panel w-1/2 md:h-full h-1/3 ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
+			<div className={`left-panel xl:size-[800px] lg:size-[500px] md:size-[400px] size-[200px] ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
+			<div className={`right-panel xl:size-[800px] lg:size-[500px] md:size-[400px] size-[200px] ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
     	</div>
 	)
 }

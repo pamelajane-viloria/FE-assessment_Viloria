@@ -21,38 +21,7 @@
     transform: rotate(90deg) scaleY(-1);
 }
 
-@media only screen and (min-width: 600px) {
-    /* Phones */
-    .left-panel {
-        margin-right: 500px;
-    }
 
-    .right-panel {
-        margin-left: 500px;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    /* Tablets */
-    .left-panel {
-        margin-right: 200px;
-    }
-
-    .right-panel {
-        margin-left: 200px;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    /* laptops, desktops */
-    .left-panel {
-        margin-right: 110px;
-    }
-
-    .right-panel {
-        margin-left: 110px;
-    }
-}
 
 @keyframes flip-gradient {
     0% { background: conic-gradient(#fefafa 30deg, #181818 320deg); }
