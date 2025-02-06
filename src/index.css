@@ -13,15 +13,23 @@
 
 .left-panel {
     background: conic-gradient(#fefafa 30deg, #181818 350deg);
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(2) translate(100px, 0);
 }
   
 .right-panel {
     background: conic-gradient(#fefafa 30deg, #181818 350deg);
-    transform: rotate(90deg) scaleY(-1);
+    transform: rotate(90deg) scaleY(-1) scale(2) translate(100px, 0);
 }
 
+@media (max-width: 768px) { /* remove transform translate */
+    .left-panel {
+        transform: rotate(90deg) scale(2); 
+    }
 
+    .right-panel {
+        transform: rotate(90deg) scaleY(-1) scale(2); 
+    }
+}
 
 @keyframes flip-gradient {
     0% { background: conic-gradient(#fefafa 30deg, #181818 320deg); }
