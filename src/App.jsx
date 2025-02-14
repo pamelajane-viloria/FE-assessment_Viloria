@@ -1,19 +1,24 @@
-import { useState, useEffect } from 'react';
+import { motion } from "motion/react"
 import './index.css';
 
 function App() {
-	const [isFlipped, setIsFlipped] = useState(false);
-
-	// Delay for better transition
-	useEffect(() => {
-		const timer = setTimeout(() => setIsFlipped(true), 100); 
-		return () => clearTimeout(timer);
-	}, []);
 	
 	return (
-		<div className="gradient-container reltative w-screen h-screen overflow-hidden flex flex-row justify-center items-center">
-			<div className={`left-panel w-full xl:h-[400px] 2xl:h-[640px] lg:h-[260px] md:h-[200px] h-[110px] ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
-			<div className={`right-panel w-full xl:h-[400px] 2xl:h-[640px] lg:h-[260px] md:h-[200px] h-[110px] ${ isFlipped ? "animate-flip-gradient" : "" }`}></div>
+		<div className="gradient-container w-screen h-screen  flex flex-row justify-center items-center">
+			<motion.div
+				initial={{ 'background': 'conic-gradient(from 90deg at 40% 70%, #fff, #000)' }}
+				animate={{ 'background': 'conic-gradient(from 90deg at 40% 70%, #000, #fff)' }}
+				transition={{ duration: 0.5, delay: .7 }}
+				className="w-full h-full"
+			>
+			</motion.div>
+			<motion.div
+				initial={{ 'background': 'conic-gradient(from 270deg at 60% 70%, #000, #fff)' }}
+				animate={{ 'background': 'conic-gradient(from 270deg at 60% 70%, #fff, #000)' }}
+				transition={{ duration: 0.5, delay: .7 }}
+				className="w-full h-full"
+			>
+			</motion.div>
     	</div>
 	)
 }
